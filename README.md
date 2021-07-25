@@ -11,3 +11,6 @@ apache maven 3.8.1
 
 example endpoint type GET: 
 http://localhost:8080/api/informationclubwifi/getInformation
+
+start docker imagen optional
+docker run -it -p 8080:8080 informationclubwifi .
