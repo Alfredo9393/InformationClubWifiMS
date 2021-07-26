@@ -17,11 +17,11 @@ http://localhost:8080/api/informationclubwifi/processReceive
     request
         <?xml version="1.0" encoding="UTF-8"?>
         <InformationClubWifiModel>
-            <input>139</input>
+            <input>alfredo del angel </input>
         </InformationClubWifiModel>
     response
         <InfClubWifiResponseModel>
-            <result>accout valid</result>
+            <result>Alfredo Del Angel</result>
         </InfClubWifiResponseModel>
 
 start docker imagen optional

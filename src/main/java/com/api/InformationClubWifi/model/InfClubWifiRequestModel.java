@@ -13,13 +13,13 @@ public class InfClubWifiRequestModel {
     
     public InfClubWifiRequestModel() {}
 
-    private Integer input;
+    private String input;
 
-    public Integer getInput() {
+    public String getInput() {
         return input;
     }
 
-    public void setInput(Integer input) {
+    public void setInput(String input) {
         this.input = input;
     }
 

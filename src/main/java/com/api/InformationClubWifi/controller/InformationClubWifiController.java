@@ -34,7 +34,6 @@ public class InformationClubWifiController {
     @RequestMapping(value="/processReceive",method=RequestMethod.POST)
     public InfClubWifiResponseModel getProcessReceive(@RequestBody InfClubWifiRequestModel informationClubWifiModel){
         System.out.println("getProcessReceive: Start validate accout "+informationClubWifiModel.getInput());      
-        return informationClubWifiService.validateAccout(informationClubWifiModel.getInput());
-        
+        return informationClubWifiService.format(informationClubWifiModel.getInput());   
     }
 }

@@ -15,13 +15,20 @@ import org.springframework.stereotype.Service;
 @Service
 public class InformationClubWifiService {
       
-    public InfClubWifiResponseModel validateAccout(Integer accout) {
+    public InfClubWifiResponseModel format(String name) {
         InfClubWifiResponseModel modelRequest = new InfClubWifiResponseModel();  
-        if (accout>0){
-            modelRequest.setResult("accout valid");
-        }else{
-            modelRequest.setResult("accout invalid");
+        String convert = "";
+        String[] information = name.split(" ");
+
+        for (int i = 0; i < information.length; i++) {
+            if (i < information.length - 1) {
+                convert += information[i].substring(0, 1).toUpperCase() + information[i].substring(1).toLowerCase() + " ";
+            } else {
+                convert += information[i].substring(0, 1).toUpperCase() + information[i].substring(1).toLowerCase();
+            }
         }
+
+        modelRequest.setResult(convert);
         return modelRequest;
     }
 }
