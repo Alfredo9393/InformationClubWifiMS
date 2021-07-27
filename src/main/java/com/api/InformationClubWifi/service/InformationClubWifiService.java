@@ -21,47 +21,76 @@ public class InformationClubWifiService {
 
     
     public InfClubWifiResponseModel validateAccout(String accout) {
-//        InfClubWifiResponseModel modelRequest = new InfClubWifiResponseModel();  
-//        String asifTitle ="";
-//        if(accout.length()==10 && accout!=""){
-//            System.out.println("correct");
-//            asifTitle = accout+""; //oraext:setFlowInstanceTitle(string(concat($inputVariable.payload/client:Account, '')))
-//            //'select X  from /account where F1 = V1'
-//            //oraext:parseXML('<RESULTS></RESULTS>')
+        System.out.println("aadap asdfasdfasdfasdfasdf");
+        InfClubWifiResponseModel modelRequest = new InfClubWifiResponseModel();  
+        String asifTitle ="";
+        if(accout.length()==10 && accout!=""){
+            asifTitle = accout+""; //oraext:setFlowInstanceTitle(string(concat($inputVariable.payload/client:Account, '')))
+            //'select X  from /account where F1 = V1'
+            //oraext:parseXML('<RESULTS></RESULTS>')
 //            result 
 //            if ()
-//            
-//            
-//        }else{
-//            System.out.println("Falled - Ingresar una cuenta valida");
-//            return "Ingresar una cuenta valida";
-//        }
-// 
-//        InfClubWifiResponseModel
-//                
-//        modelRequest.setResult(convert);
-        return getFromAccout(accout);
+
+            System.out.println("correct");
+            return getFromAccoutSucc(accout);
+            
+        }else{
+            System.out.println("Falled - Ingresar una cuenta valida");
+            return getFromAccoutErr(accout);
+        }
+ 
+   
     }
     
     
-    public InfClubWifiResponseModel getFromAccout(String name){
+    public InfClubWifiResponseModel getFromAccoutSucc(String accout){
         InfClubWifiResponseModel res = new InfClubWifiResponseModel();
         
         List<InfClubWifiResultModel> result = new ArrayList<>(); 
         InfClubWifiResultModel obj = new InfClubWifiResultModel();
-        obj.setIdResult("IdResult15");
-        obj.setResult("Result16");
+        obj.setIdResult("0000");
+        obj.setResult("0");
         obj.setResultDescription("Peticion realizada con exito");
         result.add(obj);
         
         res.setResult(result);
-        res.setName(name);
+        res.setName("alfredo del angel perez");
         res.setPhone("8116220283");
         res.setEmail("alfredo_93939@onissolutions.con");
         
         return res;
     }
     
+    public InfClubWifiResponseModel getFromAccoutErr(String accout){
+        InfClubWifiResponseModel res = new InfClubWifiResponseModel();
+        
+        List<InfClubWifiResultModel> result = new ArrayList<>(); 
+        InfClubWifiResultModel obj = new InfClubWifiResultModel();
+        obj.setIdResult("501");
+        obj.setResult("1");
+        obj.setResultDescription("Ingresar una cuenta valida");
+        result.add(obj);
+  
+        res.setResult(result);
+        
+        return res;
+    }
+    
+    public InfClubWifiResponseModel getFromAccoutFalled(String accout){
+        InfClubWifiResponseModel res = new InfClubWifiResponseModel();
+        
+        List<InfClubWifiResultModel> result = new ArrayList<>(); 
+        InfClubWifiResultModel obj = new InfClubWifiResultModel();
+        obj.setIdResult("505");
+        obj.setResult("1");
+        obj.setResultDescription("Peticion fallida");
+        result.add(obj);
+  
+        res.setResult(result);
+        
+        return res;
+    }
+        
     public String format(String name) {
         String convert = "";
         String[] information = name.split(" ");
