@@ -55,7 +55,7 @@ public class InformationClubWifiService {
         
         res.setResult(result);
         res.setName("alfredo del angel perez");
-        res.setPhone("8116220283");
+        res.setPhone(validateNumber());
         res.setEmail("alfredo_93939@onissolutions.con");
         
         return res;
@@ -91,6 +91,28 @@ public class InformationClubWifiService {
         return res;
     }
         
+    public String validateNumber() {
+        String phone="";
+        
+        List<String> data = new ArrayList<>(); 
+        data.add("7891012256");
+        data.add("5551012256");
+        data.add("8111012256");
+        data.add("7891012256");
+        data.add("5671012256");
+       
+        for (int i = 0; i < data.size(); i++) {
+            if(data.size()==5){
+                phone=data.get(i);
+            }else{
+                phone="";
+            }
+        }
+          
+        return phone;
+    }
+    
+    
     public String format(String name) {
         String convert = "";
         String[] information = name.split(" ");
