@@ -7,19 +7,16 @@ package com.api.InformationClubWifi.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
-import javax.xml.bind.annotation.XmlElement;
-
 /**
  *
  * @author APerez
  */
-public class InfClubWifiResponseModel {
-    public InfClubWifiResponseModel() {}
-
-    private List<InfClubWifiResultModel> result = null;
-
+public class InfClubWifiProcessResponseModel {
+    public InfClubWifiProcessResponseModel() {}
     
-//    @XmlElement("Name")
+    @JsonProperty("Result")
+    private InfClubWifiResultModel result = null;
+
     @JsonProperty("Name")
     private String name;
     
@@ -29,11 +26,11 @@ public class InfClubWifiResponseModel {
     @JsonProperty("Email")
     private String email;
 
-    public List<InfClubWifiResultModel> getResult() {
+    public InfClubWifiResultModel getResult() {
         return result;
     }
 
-    public void setResult(List<InfClubWifiResultModel> result) {
+    public void setResult(InfClubWifiResultModel result) {
         this.result = result;
     }
     
@@ -60,6 +57,6 @@ public class InfClubWifiResponseModel {
     public void setEmail(String email) {
         this.email = email;
     }
-
+   
 }
 

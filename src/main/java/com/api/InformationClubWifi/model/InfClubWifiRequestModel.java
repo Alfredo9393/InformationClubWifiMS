@@ -5,23 +5,28 @@
  */
 package com.api.InformationClubWifi.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonRootName;
+
 /**
  *
  * @author APerez
  */
+
+@JsonRootName("process")
 public class InfClubWifiRequestModel {
     
     public InfClubWifiRequestModel() {}
 
-    private String input;
+    @JsonProperty("Account")
+    private String account;
 
-    public String getInput() {
-        return input;
+    public String getAccount() {
+        return account;
     }
 
-    public void setInput(String input) {
-        this.input = input;
+    public void setAccount(String account) {
+        this.account = account;
     }
-
     
 }

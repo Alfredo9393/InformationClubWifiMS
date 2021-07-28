@@ -5,8 +5,8 @@
  */
 package com.api.InformationClubWifi.controller;
 
+import com.api.InformationClubWifi.model.InfClubWifiEnvelopeModel;
 import com.api.InformationClubWifi.model.InfClubWifiRequestModel;
-import com.api.InformationClubWifi.model.InfClubWifiResponseModel;
 import com.api.InformationClubWifi.service.InformationClubWifiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,8 +32,8 @@ public class InformationClubWifiController {
     }
     
     @RequestMapping(value="/processReceive",method=RequestMethod.POST)
-    public InfClubWifiResponseModel getProcessReceive(@RequestBody InfClubWifiRequestModel informationClubWifiModel){
-        System.out.println("getProcessReceive: Start validate accout "+informationClubWifiModel.getInput());      
-        return informationClubWifiService.validateAccout(informationClubWifiModel.getInput());   
+    public InfClubWifiEnvelopeModel getProcessReceive(@RequestBody InfClubWifiRequestModel informationClubWifiModel){
+        System.out.println("getProcessReceive: Start validate accout "+informationClubWifiModel.getAccount());      
+        return informationClubWifiService.validateAccout(informationClubWifiModel.getAccount());   
     }
 }
