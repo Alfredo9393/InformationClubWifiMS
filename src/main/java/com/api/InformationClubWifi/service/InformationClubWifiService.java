@@ -88,7 +88,11 @@ public class InformationClubWifiService {
         obj.setIdResult(code);  ///numeor aleatorio 
         obj.setResult("1");
         obj.setResultDescription(msg);
+        
         res.setResult(obj);
+        res.setName(format("null"));
+        res.setPhone("null");
+        res.setEmail("null");
         
         return res;
     }
@@ -98,11 +102,14 @@ public class InformationClubWifiService {
         InfClubWifiProcessResponseModel res = new InfClubWifiProcessResponseModel();
         
         InfClubWifiResultModel obj = new InfClubWifiResultModel();
-        obj.setIdResult("501");
+        obj.setIdResult("3980522");
         obj.setResult("1");
         obj.setResultDescription("Ingresar una cuenta valida");
   
         res.setResult(obj);
+        res.setName(format("null"));
+        res.setPhone("null");
+        res.setEmail("null");
         
         return res;
     }

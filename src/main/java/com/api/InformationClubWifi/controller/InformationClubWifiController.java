@@ -27,8 +27,8 @@ public class InformationClubWifiController {
         
     @RequestMapping(value="/getInformation",method=RequestMethod.GET)
     public String getInformation(){
-        System.out.println("ADAP: InformationClubWifiController: getInformation ");        
-        return "Hello word!";
+        System.out.println("Get microservice status: ON ");        
+        return "microservice status: ON";
     }
     
     @RequestMapping(value="/processReceive",method=RequestMethod.POST)
