@@ -41,15 +41,21 @@ public class InformationClubWifiService {
         try {
             
             if(accout.length()==10 && accout!=""){
-                System.out.println("correct");
-                body.setProcessResponse(setResultSucces());
+                System.out.println("correct accout");
+                
+                if(accout.equals("0100002392")){
+                    body.setProcessResponse(setResultSucces());
+                }else{
+                    System.out.println("Account not exists");
+                    body.setProcessResponse(setResultFalled("700","Account not exists"));
+                }
             }else{
                 System.out.println("Falled - Ingresar una cuenta valida");
-                body.setProcessResponse(setResultFalled());
+                body.setProcessResponse(setResultFalled("800","Peticion fallida: Ingresar una cuenta valida"));
             }
                       
         } catch (Exception e) {
-            System.out.println("Error");
+            System.out.println("Error" +e);
             body.setProcessResponse(setResultError());
         }
       
@@ -58,30 +64,30 @@ public class InformationClubWifiService {
         
     
     public InfClubWifiProcessResponseModel setResultSucces(){
+        System.out.println("select * from account where F1 = $data");
         InfClubWifiProcessResponseModel objProRes = new InfClubWifiProcessResponseModel();
     
         InfClubWifiResultModel obj = new InfClubWifiResultModel();
-        obj.setIdResult("0000");
+        obj.setIdResult("3923536");
         obj.setResult("0");
         obj.setResultDescription("Peticion realizada con exito");
         
         objProRes.setResult(obj);
-        objProRes.setName("alfredo del angel perez");
+        objProRes.setName(format("MARCELI ELIZABETH MORENO ROMERO"));
         objProRes.setPhone(validateNumber());
-        objProRes.setEmail("alfredo_93939@onissolutions.con");
+        objProRes.setEmail("fedortiz@outlook.com");
         
         return objProRes;
         
     }
     
-    public InfClubWifiProcessResponseModel setResultFalled(){
+    public InfClubWifiProcessResponseModel setResultFalled(String code, String msg){
         InfClubWifiProcessResponseModel res = new InfClubWifiProcessResponseModel();
         
         InfClubWifiResultModel obj = new InfClubWifiResultModel();
-        obj.setIdResult("505");
+        obj.setIdResult(code);  ///numeor aleatorio 
         obj.setResult("1");
-        obj.setResultDescription("Peticion fallida");
-  
+        obj.setResultDescription(msg);
         res.setResult(obj);
         
         return res;
@@ -135,7 +141,7 @@ public class InformationClubWifiService {
         data.add("5551012256");
         data.add("8111012256");
         data.add("7891012256");
-        data.add("5671012256");
+        data.add("5519266718");
        
         for (int i = 0; i < data.size(); i++) {
             if(data.size()==5){
