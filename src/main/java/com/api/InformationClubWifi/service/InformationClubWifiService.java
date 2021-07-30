@@ -47,11 +47,11 @@ public class InformationClubWifiService {
                     body.setProcessResponse(setResultSucces());
                 }else{
                     System.out.println("Account not exists");
-                    body.setProcessResponse(setResultFalled("700","Account not exists"));
+                    body.setProcessResponse(setResultFalled("3990513","Petición fallida: Cuenta no existe"));
                 }
             }else{
                 System.out.println("Falled - Ingresar una cuenta valida");
-                body.setProcessResponse(setResultFalled("800","Peticion fallida: Ingresar una cuenta valida"));
+                body.setProcessResponse(setResultFalled("3980522","Peticion fallida: Ingresar una cuenta valida"));
             }
                       
         } catch (Exception e) {
@@ -141,6 +141,7 @@ public class InformationClubWifiService {
     
     
     public String validateNumber() {
+        System.out.println("Select phones");
         String phone="";
         
         List<String> data = new ArrayList<>(); 
@@ -157,12 +158,13 @@ public class InformationClubWifiService {
                 phone="";
             }
         }
-          
+        System.out.println("response $phone");
         return phone;
     }
     
     
     public String format(String name) {
+        System.out.println("format $name");
         String convert = "";
         String[] information = name.split(" ");
 

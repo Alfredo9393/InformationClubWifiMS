@@ -28,12 +28,12 @@ public class InformationClubWifiController {
     @RequestMapping(value="/getInformation",method=RequestMethod.GET)
     public String getInformation(){
         System.out.println("Get microservice status: ON ");        
-        return "microservice status: ON";
+        return "Microservice status: ON";
     }
     
     @RequestMapping(value="/processReceive",method=RequestMethod.POST)
     public InfClubWifiEnvelopeModel getProcessReceive(@RequestBody InfClubWifiRequestModel informationClubWifiModel){
-        System.out.println("get api POST: accout: "+informationClubWifiModel.getAccount());      
+        System.out.println("Get api POST: Account: "+informationClubWifiModel.getAccount());      
         return informationClubWifiService.validateAccout(informationClubWifiModel.getAccount());   
     }
 }
