@@ -41,12 +41,14 @@ public class InformationClubWifiService {
         try {
             
             if(accout.length()==10 && accout!=""){
-                System.out.println("correct accout");
-                
+                System.out.println("Cuenta valida "+ accout);
+
+                System.out.println("select data from account where F1 = " +accout);
+
                 if(accout.equals("0100002392")){
                     body.setProcessResponse(setResultSucces());
                 }else{
-                    System.out.println("Account not exists");
+                    System.out.println("Cuenta no existe "+accout );
                     body.setProcessResponse(setResultFalled("3990513","Petición fallida: Cuenta no existe"));
                 }
             }else{
@@ -64,7 +66,6 @@ public class InformationClubWifiService {
         
     
     public InfClubWifiProcessResponseModel setResultSucces(){
-        System.out.println("select * from account where F1 = $data");
         InfClubWifiProcessResponseModel objProRes = new InfClubWifiProcessResponseModel();
     
         InfClubWifiResultModel obj = new InfClubWifiResultModel();
@@ -142,6 +143,11 @@ public class InformationClubWifiService {
     
     public String validateNumber() {
         System.out.println("Select phones");
+        System.out.println("7891012251");
+        System.out.println("5551012255");
+        System.out.println("8111012256");
+        System.out.println("7891012257");
+        System.out.println("5519266718");
         String phone="";
         
         List<String> data = new ArrayList<>(); 
@@ -158,13 +164,13 @@ public class InformationClubWifiService {
                 phone="";
             }
         }
-        System.out.println("response $phone");
+        System.out.println("Response phone " +phone);
         return phone;
     }
     
     
     public String format(String name) {
-        System.out.println("format $name");
+        System.out.println("Request format name "+name);
         String convert = "";
         String[] information = name.split(" ");
 
@@ -175,33 +181,10 @@ public class InformationClubWifiService {
                 convert += information[i].substring(0, 1).toUpperCase() + information[i].substring(1).toLowerCase();
             }
         }
-
+        System.out.println("Response format name "+convert);
         return convert;
     }
     
     
 }
 
-
-
-
-
-//string($IvkInformation_Output.PCM_OP_SEARCH_outputFlist/
-//            ns1:RESULTS/ns1:NAMEINFO/ns1:PHONES[$CounterPhones]/ns1:TYPE) = '5'
-//    
-//icon	string($IvkInformation_Output.PCM_OP_SEARCH_outputFlist/ns1:RESULTS/ns1:NAMEINFO[1]
-//    /ns1:PHONES[$CounterPhones]/ns1:PHONE)
-//    $outputVariable.payload/client:Phone
-//
-//tring($IvkInformation_Output.PCM_OP_SEARCH_outputFlist/ns1:RESULTS/ns1:AAC_VENDOR)
-//
-//try{   
-//   
-//    String name = (String) getVariableData("VarName");   
-//    setVariableData("VarName", FormatString.Format(name));   
-//   
-//}catch(Exception e){   
-//   
-//}
-//
-//string($IvkInformation_Output.PCM_OP_SEARCH_outputFlist/ns1:RESULTS/ns1:NAMEINFO[1]/ns1:EMAIL_ADDR)
