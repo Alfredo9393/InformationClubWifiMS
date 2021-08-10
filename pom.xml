@@ -12,6 +12,9 @@
 	<artifactId>InformationClubWifi</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>InformationClubWifi</name>
+        
+        
+        
 	<description>microservicesInformation Club Wifi project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -39,6 +42,13 @@
                     <artifactId>jackson-dataformat-xml</artifactId>
                 </dependency>
                 <!-- xml dependency end-->
+                <!-- kubemq dependency-->
+                <dependency>
+                    <groupId>io.kubemq.sdk</groupId>
+                    <artifactId>kubemq-sdk-Java</artifactId>
+                    <version>1.0.2</version>
+                </dependency>
+                <!-- kubemq dependency-->
 	</dependencies>
 
 	<build>
